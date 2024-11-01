@@ -309,3 +309,11 @@ console.log("Hello World");
 
 
 
+
+
+### langkah membuat tugas Buat script untuk melakukan validasi pada isian form.
+
+
+
+
+
