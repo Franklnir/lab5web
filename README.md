@@ -184,13 +184,8 @@ console.log("Hello World");
 </head>
 <body>
   <script>
-    // Meminta input nilai dari pengguna
     let nilai = prompt("Nilai (0-100):", 0);
-
-    // Menentukan hasil kelulusan
     let hasil = nilai >= 60 ? "lulus" : "tidak lulus";
-
-    // Menampilkan hasil ke halaman
     document.write("Hasil: " + hasil);
   </script>
 </body>
@@ -261,7 +256,6 @@ console.log("Hello World");
             document.fgColor = warna;
         }
     </script>
-
     <h1>tes</h1>
     <form>
         <input type="button" value="Latar Belakang Hijau" onclick="ubahWarnaLB('GREEN')">
@@ -312,6 +306,58 @@ console.log("Hello World");
 
 
 ### langkah membuat tugas Buat script untuk melakukan validasi pada isian form.
+# Formulir: membuat formulir dengan field nama, NIM, jurusan, dan mata kuliah. Field pada matkul ini menggunakan select untuk pilihan ganda seperti meperti matkul pemograman web
+# Validasi: NIM: Divalidasi agar hanya berisi 10 digit angka.
+# Mata Kuliah: Divalidasi agar pengguna memilih opsi dari dropdown.
+# Pesan Error: Jika validasi gagal, akan muncul alert dengan pesan error.
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulir Pendaftaran Mata Kuliah</title>
+</head>
+<body>
+  <form id="myForm">
+    <label for="nama">Nama:</label>
+    <input type="text" id="nama" name="nama" required>
+    <br>
+    <label for="nim">NIM:</label>
+    <input type="text" id="nim" name="nim" required>
+    <br>
+    <label for="jurusan">Jurusan:</label>
+    <input type="text" id="jurusan" name="jurusan" required>
+    <br>
+    <label for="matkul">Mata Kuliah:</label>
+    <select id="matkul" name="matkul" required>
+      <option value="">Pilih Mata Kuliah</option>
+      <option value="Pemrograman Web">Pemrograman Web</option>
+      <option value="Algoritma dan Struktur Data">Algoritma dan Struktur Data</option>
+      </select>
+    <br>
+    <input type="submit" value="Daftar">
+  </form>
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      let nama = document.getElementById("nama").value;
+      let nim = document.getElementById("nim").value;
+      let jurusan = document.getElementById("jurusan").value;
+      let matkul = document.getElementById("matkul").value;
+      if (nim.length !== 10 || isNaN(nim)) {
+        alert("NIM harus berupa angka dengan 10 digit.");
+        return false;
+      }
+
+      if (matkul === "") {
+        alert("Silahkan pilih mata kuliah.");
+        return false;
+      }
+      alert("Data valid. Pendaftaran berhasil.");
+    });
+  </script>
+</body>
+</html>
+
+![image](https://github.com/user-attachments/assets/af8aa277-191c-4e78-b45c-c5ecd96d82c0)
 
 
 
